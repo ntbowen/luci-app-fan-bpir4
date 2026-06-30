@@ -1,0 +1,202 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Fan Control"
+msgstr "风扇控制"
+
+msgid "Fan Control — BPI R4"
+msgstr "风扇控制 — BPI R4"
+
+msgid "CPU / SoC"
+msgstr "CPU / SoC"
+
+msgid "WiFi 2.4 GHz"
+msgstr "WiFi 2.4 GHz"
+
+msgid "WiFi 5 GHz"
+msgstr "WiFi 5 GHz"
+
+msgid "WiFi 6 GHz"
+msgstr "WiFi 6 GHz"
+
+msgid "Mode"
+msgstr "模式"
+
+msgid "Manual"
+msgstr "手动"
+
+msgid "Auto"
+msgstr "自动"
+
+msgid "Fan"
+msgstr "风扇"
+
+msgid "Governor: "
+msgstr "调速器："
+
+msgid "Off"
+msgstr "停转"
+
+msgid "Low"
+msgstr "低速"
+
+msgid "Medium"
+msgstr "中速"
+
+msgid "High"
+msgstr "高速"
+
+msgid "Control Mode"
+msgstr "控制模式"
+
+msgid "Auto (Thermal Governor)"
+msgstr "自动（温控调速）"
+
+msgid "Manual (Fixed PWM)"
+msgstr "手动（固定占空比）"
+
+msgid "Auto: kernel step_wise controls fan speed by temperature."
+msgstr "自动：内核 step_wise 调速器根据温度自动控制风扇速度。"
+
+msgid "Manual: fixed PWM duty cycle, no temperature response."
+msgstr "手动：固定 PWM 占空比运行，不响应温度变化。"
+
+msgid "Auto Mode — Trip Temperature Thresholds"
+msgstr "自动模式 — 触发温度阈值"
+
+msgid "Fan speed increases as temperature rises. Hysteresis is 2°C (fan steps down 2°C below the threshold)."
+msgstr "温度升高时风扇加速。迟滞为 2°C（温度低于阈值 2°C 后才降档）。"
+
+msgid "Low speed threshold (state 1)"
+msgstr "低速触发温度（档位 1）"
+
+msgid "Medium speed threshold (state 2)"
+msgstr "中速触发温度（档位 2）"
+
+msgid "Full speed threshold (state 3)"
+msgstr "全速触发温度（档位 3）"
+
+msgid "State"
+msgstr "档位"
+
+msgid "Trigger"
+msgstr "触发温度"
+
+msgid "PWM"
+msgstr "PWM 值"
+
+msgid "Duty"
+msgstr "占空比"
+
+msgid "0 — Off"
+msgstr "0 — 停转"
+
+msgid "1 — Low"
+msgstr "1 — 低速"
+
+msgid "2 — Medium"
+msgstr "2 — 中速"
+
+msgid "3 — Full"
+msgstr "3 — 全速"
+
+msgid "low threshold"
+msgstr "低速阈值"
+
+msgid "Manual Mode — Fixed PWM Duty Cycle"
+msgstr "手动模式 — 固定 PWM 占空比"
+
+msgid "Fan runs at a fixed speed regardless of temperature. No thermal protection."
+msgstr "风扇以固定速度运行，不随温度变化。注意：此模式下无温度保护。"
+
+msgid "PWM duty cycle"
+msgstr "PWM 占空比"
+
+msgid "Apply Settings"
+msgstr "应用设置"
+
+msgid "Restore Defaults"
+msgstr "恢复默认"
+
+msgid "CPU"
+msgstr "CPU"
+
+msgid "Load"
+msgstr "负载"
+
+msgid "Usage"
+msgstr "用量"
+
+msgid "Memory"
+msgstr "内存"
+
+msgid "Temperature"
+msgstr "温度"
+
+msgid "Max: "
+msgstr "最大："
+
+msgid "Min"
+msgstr "最低"
+
+msgid "Min start"
+msgstr "最低启动"
+
+msgid "Stop below"
+msgstr "停转低于"
+
+msgid "Dead zone"
+msgstr "死区"
+
+msgid "Fan off (stopped)"
+msgstr "风扇停转"
+
+msgid "fan cannot start from rest, will keep spinning if already running"
+msgstr "无法从静止启动，若已在转动则可维持"
+
+msgid "fan will stop even if currently spinning"
+msgstr "即使正在转动也会停转"
+
+msgid "Below stop threshold"
+msgstr "低于停转阈值"
+
+msgid "Off (0)"
+msgstr "停转 (0)"
+
+msgid "Full (255)"
+msgstr "全速 (255)"
+
+msgid "Applying..."
+msgstr "正在应用..."
+
+msgid "Applied successfully."
+msgstr "应用成功。"
+
+msgid "Error: "
+msgstr "错误："
+
+msgid "Failed to apply: "
+msgstr "应用失败："
+
+msgid "Fan settings applied."
+msgstr "风扇设置已应用。"
+
+msgid "Fan settings reset to defaults."
+msgstr "风扇设置已恢复为默认值。"
+
+msgid "Reset all fan settings to factory defaults?"
+msgstr "将所有风扇设置恢复为出厂默认值？"
+
+msgid "Auto mode · Low: 40°C · Med: 85°C · High: 115°C"
+msgstr "自动模式 · 低速：40°C · 中速：85°C · 全速：115°C"
+
+msgid "Cancel"
+msgstr "取消"
+
+msgid "Restore"
+msgstr "恢复"
+
+msgid "Defaults restored."
+msgstr "已恢复默认值。"

@@ -1,0 +1,6 @@
+config fan-bpir4
+	option mode        'auto'
+	option pwm         '128'
+	option temp_low    '40'
+	option temp_med    '85'
+	option temp_high   '115'

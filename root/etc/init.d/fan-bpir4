@@ -1,0 +1,63 @@
+#!/bin/sh /etc/rc.common
+
+START=19
+STOP=99
+
+THERMAL_ZONE=/sys/class/thermal/thermal_zone0
+PWM_FAN=/sys/class/hwmon/hwmon1
+
+apply_settings() {
+	local mode pwm temp_low temp_med temp_high
+
+	config_load fan-bpir4
+
+	# UCI config uses anonymous section @fan-bpir4[0], must use config_foreach
+	_read_section() {
+		config_get mode     "$1" mode      'auto'
+		config_get pwm      "$1" pwm       '128'
+		config_get temp_low  "$1" temp_low  '40'
+		config_get temp_med  "$1" temp_med  '85'
+		config_get temp_high "$1" temp_high '115'
+	}
+	config_foreach _read_section fan-bpir4
+
+	if [ "$mode" = "manual" ]; then
+		# Switch to user_space first, then set PWM to avoid brief full-speed burst
+		echo user_space > "${THERMAL_ZONE}/policy"
+		echo "$pwm" > "${PWM_FAN}/pwm1"
+		echo 1 > "${PWM_FAN}/pwm1_enable"
+	else
+		# Auto: set trip temps first, then switch governor
+		echo $((temp_high * 1000)) > "${THERMAL_ZONE}/trip_point_2_temp"
+		echo $((temp_med  * 1000)) > "${THERMAL_ZONE}/trip_point_3_temp"
+		echo $((temp_low  * 1000)) > "${THERMAL_ZONE}/trip_point_4_temp"
+		# thermal_zone0 uses polling_delay=0 (interrupt-driven), so switching
+		# to step_wise does NOT trigger an immediate re-evaluation. We must
+		# pre-set the correct PWM based on current temperature in user_space
+		# before handing control to step_wise, otherwise a stale low PWM value
+		# (from a prior manual stop) will leave the fan stopped even when hot.
+		local cur_temp init_pwm
+		cur_temp=$(cat "${THERMAL_ZONE}/temp" 2>/dev/null || echo 0)
+		if   [ "$cur_temp" -ge $((temp_high * 1000)) ]; then init_pwm=255
+		elif [ "$cur_temp" -ge $((temp_med  * 1000)) ]; then init_pwm=128
+		elif [ "$cur_temp" -ge $((temp_low  * 1000)) ]; then init_pwm=80
+		else                                                  init_pwm=0
+		fi
+		echo user_space > "${THERMAL_ZONE}/policy"
+		echo 1 > "${PWM_FAN}/pwm1_enable"
+		echo "$init_pwm" > "${PWM_FAN}/pwm1"
+		echo step_wise > "${THERMAL_ZONE}/policy"
+	fi
+}
+
+start() {
+	apply_settings
+}
+
+boot() {
+	apply_settings
+}
+
+reload() {
+	apply_settings
+}

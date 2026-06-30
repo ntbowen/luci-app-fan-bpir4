@@ -1,0 +1,31 @@
+{
+  "luci-app-fan-bpir4": {
+    "description": "Fan Control for BPI R4",
+    "read": {
+      "uci": [ "fan-bpir4" ],
+      "file": {
+        "/sys/class/thermal/thermal_zone*/temp": [ "read" ],
+        "/sys/class/thermal/thermal_zone*/trip_point_*": [ "read" ],
+        "/sys/class/thermal/thermal_zone*/policy": [ "read" ],
+        "/sys/class/thermal/cooling_device*/cur_state": [ "read" ],
+        "/sys/class/hwmon/hwmon*/pwm1": [ "read" ],
+        "/sys/class/hwmon/hwmon*/pwm1_enable": [ "read" ],
+        "/sys/class/hwmon/hwmon*/temp1_input": [ "read" ],
+        "/sys/devices/system/cpu/cpu*/cpufreq/scaling_cur_freq": [ "read" ],
+        "/sys/devices/system/cpu/cpu*/cpufreq/cpuinfo_max_freq": [ "read" ],
+        "/proc/stat": [ "read" ],
+        "/proc/loadavg": [ "read" ],
+        "/proc/meminfo": [ "read" ]
+      }
+    },
+    "write": {
+      "uci": [ "fan-bpir4" ],
+      "file": {
+        "/sys/class/thermal/thermal_zone*/trip_point_*_temp": [ "write" ],
+        "/sys/class/thermal/thermal_zone*/policy": [ "write" ],
+        "/sys/class/hwmon/hwmon*/pwm1": [ "write" ],
+        "/sys/class/hwmon/hwmon*/pwm1_enable": [ "write" ]
+      }
+    }
+  }
+}
