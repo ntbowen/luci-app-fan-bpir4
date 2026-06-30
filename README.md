@@ -1,5 +1,7 @@
 # luci-app-fan-bpir4
 
+[中文文档](README.zh-CN.md)
+
 LuCI fan control application for **Banana Pi BPI-R4** (MediaTek MT7988A / Filogic 880).
 
 ## Features
