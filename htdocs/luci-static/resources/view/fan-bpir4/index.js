@@ -284,8 +284,7 @@ return view.extend({
 			'@keyframes fan-spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}',
 			'#fan-blades{transform-origin:60px 60px;animation:fan-spin 2s linear infinite;animation-play-state:paused}',
 			/* dashboard outer wrapper – same visual width as .fan-section */
-			'.fan-dashboard-wrap{background:#fff;border:1px solid #e8e8e8;border-radius:12px;',
-			'padding:20px 24px!important;box-shadow:0 2px 8px rgba(0,0,0,.06);margin-bottom:16px!important}',
+			'.fan-dashboard-wrap{border-radius:12px;padding:20px 24px!important;margin-bottom:16px!important}',
 			/* dashboard grid */
 			'.fan-dashboard{display:grid;grid-template-columns:1fr 1.5fr 1fr;gap:0;margin:0}',
 			'@media(max-width:860px){.fan-dashboard{grid-template-columns:1fr}}',
@@ -294,8 +293,7 @@ return view.extend({
 			'.fan-card+.fan-card{border-left:1px solid #f0f0f0}',
 			'.fan-card-title{font-size:12px;font-weight:600;color:#888;text-transform:uppercase;',
 			'letter-spacing:.05em;margin-bottom:14px}',
-			'.fan-mem-bar{background:#fff;border:1px solid #e8e8e8;border-radius:12px;',
-			'padding:20px 24px!important;box-shadow:0 2px 8px rgba(0,0,0,.06);margin-bottom:16px!important}',
+			'.fan-mem-bar{border-radius:12px;padding:20px 24px!important;margin-bottom:16px!important}',
 			/* progress bars */
 			'.fbar-wrap{height:6px;border-radius:3px;background:#f0f0f0;overflow:hidden;margin:4px 0}',
 			'.fbar-fill{height:100%;border-radius:3px;transition:width .6s ease}',
@@ -304,8 +302,7 @@ return view.extend({
 			/* ring */
 			'.fan-ring-wrap{display:flex;flex-direction:column;align-items:center;gap:10px}',
 			/* control section */
-			'.fan-section{background:#fff;border:1px solid #e8e8e8;border-radius:12px;',
-			'padding:20px 24px!important;margin-bottom:16px!important;box-shadow:0 2px 8px rgba(0,0,0,.06)}',
+			'.fan-section{border-radius:12px;padding:20px 24px!important;margin-bottom:16px!important}',
 			'.fan-section h3{margin:0 0 14px 0;font-size:15px;font-weight:600;color:#333;',
 			'border-bottom:1px solid #f0f0f0;padding-bottom:10px}',
 			/* slider rows */
